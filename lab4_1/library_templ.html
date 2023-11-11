@@ -1,0 +1,48 @@
+<html>
+ <head>
+  <title> Дамп базы данных </title>
+  <link rel="stylesheet" href="style.css">
+
+  {% macro render_table(name, df) %}
+   <div class="table">
+   <p>
+    <b>{{name}} </b>
+   </p>
+   <!-- количество строк в таблице -->
+   {% set n = len(df) %}
+   <table>
+   <!-- формируем заголовок таблицы (имена столбцов) -->
+    <tr class="header">
+    {% for name in df.dtypes.index %}
+    <th>{{name}}</th>
+    {% endfor %}
+    </tr>
+
+    <tbody>
+    <!-- для всех строк таблицы -->
+    {% for i in range(n) %}
+    <tr>
+    <!-- выводим значение каждого столбца -->
+    {% for name in df.dtypes.index %}
+    <td> {{ df.loc[i, name] }} </td>
+    {% endfor %}
+    </tr>
+    {% endfor %}
+    </tbody>
+   </table>
+   </div>
+  {% endmacro %}
+
+ </head>
+<body>
+ <div class="tables">
+   {{render_table(table_1, relation_1)}}
+   {{render_table(table_2, relation_2)}}
+   {{render_table(table_3, relation_3)}}
+   {{render_table(table_4, relation_4)}}
+   {{render_table(table_5, relation_5)}}
+   {{render_table(table_6, relation_6)}}
+   {{render_table(table_7, relation_7)}}
+ </div>
+</body>
+</html>

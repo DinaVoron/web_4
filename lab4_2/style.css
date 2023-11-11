@@ -1,0 +1,28 @@
+table {
+    border-collapse: collapse;
+}
+
+td, th {
+    border: 1px solid gray;
+    padding: 5px;
+}
+
+.table {
+    display: inline-block;
+}
+
+.header {
+    background: #D3D3D3;
+}
+
+tr:nth-child(even) {
+    background-color: #D3D3D3;
+}
+
+.table p {
+    text-align: center;
+}
+
+td form {
+    margin-block-end: 0em;
+}
